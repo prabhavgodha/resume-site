@@ -1,0 +1,422 @@
+/* ==========================================
+   CSS Custom Properties (Design Tokens)
+   ========================================== */
+:root {
+    --text-main: #14181F;
+    --bg-surface: #FFFFFF;
+    --bg-primary: #FFFFFF;
+    --bg-light: #F3F4F6;
+    --text-muted: #3F4651;
+    --border-color: #CDD2D9;
+    --accent-green: #0F7B45;
+    --accent-hover: #0b5c34;
+    --transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* ==========================================
+   Global Reset & Box Sizing
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   Layout Utilities
+   ========================================== */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-dark {
+    background-color: var(--text-main);
+}
+
+.text-white {
+    color: #FFFFFF !important;
+}
+
+.text-light {
+    color: #CDD2D9 !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================
+   Buttons & Interactive Elements
+   ========================================== */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.primary-button {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.secondary-button {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.secondary-button:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* ==========================================
+   Header & Sticky Navigation (Flexbox)
+   ========================================== */
+.site-header {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-green);
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero-section {
+    padding: 5rem 0;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--accent-green);
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-photo-box img {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   Section Headings & Typography
+   ========================================== */
+h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   Cards & Grid Layouts (CSS Grid)
+   ========================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    padding: 1.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.org-sub, .role-title, .date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.card ul {
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+}
+
+.card li {
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================
+   Tags / Skills Badges
+   ========================================== */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==========================================
+   Printable Sheet Component
+   ========================================== */
+.sheet {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.sheet-header {
+    border-bottom: 2px solid var(--text-main);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.sheet-header h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+}
+
+.sheet-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.sheet-section {
+    margin-bottom: 1.5rem;
+}
+
+.sheet-section h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+.sheet-section p, .sheet-section li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.sheet-section ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   Contact Section
+   ========================================== */
+.contact-links {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-links p {
+    margin-bottom: 0.75rem;
+}
+
+.contact-links a {
+    color: #4ade80;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.site-footer {
+    background-color: var(--text-main);
+    color: var(--text-light);
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-top {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-to-top:hover {
+    color: white;
+}
+
+/* ==========================================
+   Responsive Media Queries
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   Print Rules (A4 Printable Resume View)
+   ========================================== */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #resume, #resume * {
+        visibility: visible;
+    }
+    #resume {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+}
